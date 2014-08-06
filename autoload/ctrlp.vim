@@ -852,6 +852,7 @@ endf
 " * Mappings {{{1
 fu! s:MapNorms()
 	if exists('s:nmapped') && s:nmapped == s:bufnr | retu | en
+	mapclear <buffer>
 	let pcmd = "nn \<buffer> \<silent> \<k%s> :\<c-u>cal \<SID>%s(\"%s\")\<cr>"
 	let cmd = substitute(pcmd, 'k%s', 'char-%d', '')
 	let pfunc = 'PrtFocusMap'
